@@ -21,13 +21,6 @@
 </head>
 
 <body>
-    <div class="preloader">
-        <svg class="preloader__image" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <path fill="currentColor"
-            d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
-          </path>
-        </svg>
-    </div>
     <div class="body">
         <button class="scrollup">Наверх</button>
         <form id="form1" style="display: none;" class="sign_in ">
@@ -177,10 +170,10 @@
             <button id="sButton2" onclick="sliderButton2() " class="bg-purple-400 rounded-full w-4 p-2"></button>
         </div>
 
-        <section class="text-gray-600 body-font">
+        <section id="content" class="text-gray-600 body-font">
             <div class="container px-5 py-24 mx-auto flex flex-wrap">
                 <div class="flex flex-wrap w-full">
-                    <div class="lg:w-1/5 md:w-1/3 md:pr-10 md:py-6">
+                    <div id="burger" class="lg:w-1/5 md:w-1/3 md:pr-10 md:py-6">
                         <div class="flex relative pb-12">
                             <div class="flex-grow pl-4">
                                 <a href="#">
@@ -214,7 +207,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12">
+                    <div class="lg:w-4/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12">
                         <h1 class=" title-font text-medium text-gray-900 mb-1 text-2xl">Безопасность жизнидеятельности</h1>
                         <p>Каждый человек, работающий на производственном предприятии, знает, что без прохождения инструктажа по охране и безопасности труда, к работе его не допустят. Для того чтобы обеспечить безопасность труда на производстве, предотвратить
                             производственный травматизм и профзаболевания создается служба охраны труда. В каких случаях на предприятии создается такая служба, какие функции она выполняет и какие задачи решает, регулирует свод законов и положений об охране
