@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Безопасность жизнидеятельности</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="image\logo.PNG">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="body">
+        <button class="scrollup">Наверх</button>
+        <form id="form1" style="display: none;" class="sign_in">
+            <div class="grid max-h-screen">
+                <div class="p-12 bg-white mt-0 ">
+                    <button class="p-1 pl-4 pr-5 border-2 border-purple-500 text-purple-500 text-lg rounded-lg hover:bg-purple-500 hover:text-gray-900 text-sm font-medium title-font focus:border-4 focus:border-purple-900" onclick="disp(document.getElementById('form1'))">X</button>
+                    <h1 class="text-xl font-semibold">Привет, <span class="font-normal">пожалуйста, заполните свою
+          информацию, чтобы продолжить</span></h1>
+                    <form class="mt-6">
+                        <div class="flex justify-between gap-3">
+                            <span class="">
+            <label for="firstname" class="block text-xs font-semibold text-gray-600 uppercase">Фамилия</label>
+            <input id="firstname" type="text" name="firstname" placeholder="John" autocomplete="given-name"
+              class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+              required />
+          </span>
+                            <span class="w-2/2">
+            <label for="lastname" class="block text-xs font-semibold text-gray-600 uppercase">Имя</label>
+            <input id="lastname" type="text" name="lastname" placeholder="Doe" autocomplete="family-name"
+              class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+              required />
+          </span>
+                        </div>
+                        <label for="email" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="john.doe@company.com" autocomplete="email" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
+                        <label for="password" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Password</label>
+                        <input id="password" type="password" name="password" placeholder="********" autocomplete="new-password" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
+                        <label for="password-confirm" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Confirm
+          password</label>
+                        <input id="password-confirm" type="password" name="password-confirm" placeholder="********" autocomplete="new-password" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200  appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" required
+                        />
+                        <button type="submit" class="w-full py-3 mt-6  font-medium tracking-widest text-white uppercase bg-purple-800 shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+          Зарегистрироваться
+        </button>
+                    </form>
+                </div>
+            </div>
+        </form>
+
+
+        <form id="form2" style="display: none;" class="sign_in">
+            <div class="grid max-h-screen">
+                <div class="p-12 bg-white mt-0 ">
+                    <button class="p-1 pl-4 pr-5 border-2 border-purple-500 text-purple-500 text-lg rounded-lg hover:bg-purple-500 hover:text-gray-900 text-sm font-medium title-font focus:border-4 focus:border-purple-900" onclick="disp(document.getElementById('form2'))">X</button>
+                    <h1 class="text-xl font-semibold">Привет, <span class="font-normal">пожалуйста, заполните свою
+        информацию, чтобы продолжить</span></h1>
+                    <form class="mt-6">
+                        <label for="email" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="john.doe@company.com" autocomplete="email" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
+                        <label for="password" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Password</label>
+                        <input id="password" type="password" name="password" placeholder="********" autocomplete="new-password" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
+                        <button type="submit" class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-purple-800 shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+        Войти
+      </button>
+
+                    </form>
+                </div>
+            </div>
+        </form>
+
+        <form id="form3" style="display: none;" class="state">
+            <div class="py-12">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <button class="p-1 pl-4 pr-5 border-2 border-purple-500 text-purple-500 text-lg rounded-lg hover:bg-purple-500 hover:text-gray-900 text-sm font-medium title-font focus:border-4 focus:border-purple-900" onclick="disp(document.getElementById('form3'))">X</button>
+                        <div class="p-6 bg-white border-b border-gray-200">
+                            <form method="POST" action="action.php">
+                                <div class="mb-4">
+                                    <label class="text-xl text-gray-600">Title <span class="text-red-500">*</span></label></br>
+                                    <input type="text" class="border-2 border-gray-300 p-2 w-full" name="title" id="title" value="" required>
+                                </div>
+        
+                                <div class="mb-4">
+                                    <label class="text-xl text-gray-600">Description</label></br>
+                                    <input type="text" class="border-2 border-gray-300 p-2 w-full" name="description" id="description" placeholder="(Optional)">
+                                </div>
+        
+                                <div class="mb-8">
+                                    <label class="text-xl text-gray-600">Content <span class="text-red-500">*</span></label></br>
+                                    <textarea name="content" class="ckeditor">
+                                        
+                                    </textarea>
+                                </div>
+        
+                                <div class="flex p-1">
+                                    <select class="border-2 border-gray-300 border-r p-2" name="action">
+                                        <option>Save and Publish</option>
+                                        <option>Save Draft</option>
+                                    </select>
+                                    <button role="submit" class="p-3 bg-blue-500 text-white hover:bg-blue-400" required>Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </form>
+
+        <header class="text-gray-600 body-font">
+            <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+                <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="index.html">
+                    <img src="image/logo.PNG" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-0 rounded-full" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    <span class="ml-3 text-xl">ОБоже</span>
+                </a>
+                <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+                    <a class="mr-5 hover:text-gray-900" href="index.html">Главная</a>
+                    <a class="mr-5 hover:text-gray-900" href="questions.html">Вопросы и ответы</a>
+                    <a class="mr-5 hover:text-gray-900" href="about.html">О нас</a>
+                </nav>
+                <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" onclick="window.location.href='account.html'">Личный кабинет</button>
+                <button class="p-1 pl-4 pr-5 mx-3 bg-transparent border-2 border-purple-500 text-purple-500 text-lg rounded-lg hover:bg-purple-500 hover:text-gray-900 text-sm font-medium title-font focus:border-4 focus:border-purple-900" onclick="disp(document.getElementById('form1'))">Регистрация</button>
+                <button class="p-1 pl-4 pr-5 bg-transparent border-2 border-purple-500 text-purple-500 text-lg rounded-lg hover:bg-purple-500 hover:text-gray-900 text-sm font-medium title-font focus:border-4 focus:border-purple-900" onclick="document.location='index.html'">Выход</button>
+            </div>
+        </header>
+
+        <section class="text-gray-600 body-font">
+            <div class="container px-5 py-24 mx-auto flex flex-wrap">
+                <div class="flex flex-wrap -mx-4 mt-auto mb-auto lg:w-1/2 sm:w-2/3 content-start sm:pr-10">
+                    <div class="w-full sm:p-4 px-4 mb-6">
+                        <h1 class="title-font font-medium text-xl mb-2 text-gray-900">Banan_996</h1>
+                        <div class="leading-relaxed">Silver</div>
+                    </div>
+                    <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+                        <h2 class="title-font font-medium text-3xl text-gray-900">106</h2>
+                        <p class="leading-relaxed">Ответов</p>
+                    </div>
+                    <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+                        <h2 class="title-font font-medium text-3xl text-gray-900">6</h2>
+                        <p class="leading-relaxed">Статей</p>
+                    </div>
+                    <button class="ml-2 inline-flex text-gray-700 bg-gray-100 border-0 py-10 px-5 focus:outline-none hover:bg-gray-200 rounded text-lg" onclick="disp(document.getElementById('form3'))" >Добавить статью</button>
+                </div>
+
+                <div class="lg:w-1/2 sm:w-1/3 w-full rounded-lg overflow-hidden mt-6 sm:mt-0">
+                    <img class="object-cover object-center w-full h-full" src="image/account.jpg" alt="stats">
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-gray-600 body-font">
+            <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+                <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900" href="index.html">
+                    <img src="image/logo.PNG" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-0 rounded-full" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    <span class="ml-3 text-xl">ОБоже</span>
+                </a>
+                <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2021 ОБоже —
+                    <a href="#" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@anonymus</a>
+                </p>
+                <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+          <a class="ml-3 text-gray-500" href="https://instagram.com/sssssshaman?utm_medium=copy_link">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="w-5 h-5" viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            </svg>
+          </a>
+        </span>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

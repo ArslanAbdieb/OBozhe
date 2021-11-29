@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Безопасность жизнидеятельности</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="image\logo.PNG">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        window.onload = function () {
+      document.body.classList.add('loaded_hiding');
+      window.setTimeout(function () {
+        document.body.classList.add('loaded');
+        document.body.classList.remove('loaded_hiding');
+      }, 500);
+    }
+    </script>
+</head>
+
+<body>
+    <div class="preloader">
+        <svg class="preloader__image" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path fill="currentColor"
+            d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
+          </path>
+        </svg>
+    </div>
+    <div class="body">
+        <button class="scrollup">Наверх</button>
+        <form id="form1" style="display: none;" class="sign_in ">
+            <div class="grid max-h-screen z-10">
+                <div class="p-12 bg-white mt-0 ">
+                    <button class="p-1 pl-4 pr-5 border-2 border-purple-500 text-purple-500 text-lg rounded-lg hover:bg-purple-500 hover:text-gray-900 text-sm font-medium title-font focus:border-4 focus:border-purple-900" onclick="disp(document.getElementById('form1'))">X</button>
+                    <h1 class="text-xl font-semibold">Привет, <span class="font-normal">пожалуйста, заполните свою
+          информацию, чтобы продолжить</span></h1>
+                    <form class="mt-6">
+                        <div class="flex justify-between gap-3">
+                            <span class="">
+            <label for="firstname" class="block text-xs font-semibold text-gray-600 uppercase">Фамилия</label>
+            <input id="firstname" type="text" name="firstname" placeholder="John" autocomplete="given-name"
+              class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+              required />
+          </span>
+                            <span class="w-2/2">
+            <label for="lastname" class="block text-xs font-semibold text-gray-600 uppercase">Имя</label>
+            <input id="lastname" type="text" name="lastname" placeholder="Doe" autocomplete="family-name"
+              class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+              required />
+          </span>
+                        </div>
+                        <label for="email" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="john.doe@company.com" autocomplete="email" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
+                        <label for="password" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Password</label>
+                        <input id="password" type="password" name="password" placeholder="********" autocomplete="new-password" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
+                        <label for="password-confirm" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Confirm
+          password</label>
+                        <input id="password-confirm" type="password" name="password-confirm" placeholder="********" autocomplete="new-password" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" required
+                        />
+                        <button type="submit" class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-purple-800 shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+          Зарегистрироваться
+        </button>
+                    </form>
+                </div>
+            </div>
+        </form>
+
+
+        <form id="form2" style="display: none;" class="sign_in ">
+            <div class="grid max-h-screen z-10">
+                <div class="p-12 bg-white mt-0 ">
+                    <button class="p-1 pl-4 pr-5 border-2 border-purple-500 text-purple-500 text-lg rounded-lg hover:bg-purple-500 hover:text-gray-900 text-sm font-medium title-font focus:border-4 focus:border-purple-900" onclick="disp(document.getElementById('form2'))">X</button>
+                    <h1 class="text-xl font-semibold">Привет, <span class="font-normal">пожалуйста, заполните свою
+        информацию, чтобы продолжить</span></h1>
+                    <form class="mt-6">
+                        <label for="email" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="john.doe@company.com" autocomplete="email" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
+                        <label for="password" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Password</label>
+                        <input id="password" type="password" name="password" placeholder="********" autocomplete="new-password" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
+                        <button type="submit" class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-purple-800 shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+        Войти
+      </button>
+
+                    </form>
+                </div>
+            </div>
+        </form>
+
+        <div id="weather" class=" flex">
+            <div class="flex flex-col bg-white rounded p-4 w-full max-w-xs">
+                <div class="font-bold text-xl">Almetevsk</div>
+                <div class="text-sm text-gray-500">Пятница 26 Ноября 2021</div>
+                <div class="mt-6 text-6xl self-center inline-flex items-center justify-center rounded-lg text-indigo-400 h-24 w-24">
+                    <svg class="w-32 h-32" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+          </svg>
+                </div>
+                <div class="flex flex-row items-center justify-center mt-6">
+                    <div class="font-medium text-6xl">-9°</div>
+                    <div class="flex flex-col items-center ml-6">
+                        <div>Облачно</div>
+                        <div class="mt-1">
+                            <span class="text-sm"><i class="far fa-long-arrow-up"></i></span>
+                            <span class="text-sm font-light text-gray-500">-5°C</span>
+                        </div>
+                        <div>
+                            <span class="text-sm"><i class="far fa-long-arrow-down"></i></span>
+                            <span class="text-sm font-light text-gray-500">-7°C</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-row justify-between mt-6 space-x-3">
+                    <div class="flex flex-col items-center">
+                        <div class="font-medium text-sm">Ветер</div>
+                        <div class="text-sm text-gray-500">2м/с</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="font-medium text-sm">Влажность</div>
+                        <div class="text-sm text-gray-500">68%</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="font-medium text-sm">Видимость</div>
+                        <div class="text-sm text-gray-500">10km</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xz4e">
+            <img src="image/xz4e.gif">
+        </div>
+
+
+        <header class="text-gray-600 body-font">
+            <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+                <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="index.html">
+                    <img src="image/logo.PNG" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-0 rounded-full" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    <span class="ml-3 text-xl">ОБоже</span>
+                </a>
+                <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+                    <a class="mr-5 hover:text-gray-900" href="index.html">Главная</a>
+                    <a class="mr-5 hover:text-gray-900" href="questions.html">Вопросы и ответы</a>
+                    <a class="mr-5 hover:text-gray-900" href="about.html">О нас</a>
+                </nav>
+                <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0" onclick="window.location.href='account.html'">Личный кабинет</button>
+                <button class="p-1 pl-4 pr-5 mx-3 bg-transparent border-2 border-purple-500 text-purple-500 text-lg rounded-lg hover:bg-purple-500 hover:text-gray-900 text-sm font-medium title-font focus:border-4 focus:border-purple-900" onclick="disp(document.getElementById('form1'))">Регистрация</button>
+                <button class="p-1 pl-4 pr-5 bg-transparent border-2 border-purple-500 text-purple-500 text-lg rounded-lg hover:bg-purple-500 hover:text-gray-900 text-sm font-medium title-font focus:border-4 focus:border-purple-900" onclick="disp(document.getElementById('form2'))">Вход</button>
+            </div>
+        </header>
+
+        <div class="sliderAx h-auto z-0">
+            <div id="slider-1" class="container mx-auto">
+                <div class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill" style="background-image: url(image/city.PNG)">
+                    <div class="md:w-1/2">
+                        <p class="text-3xl font-bold">Безопасность</p>
+                        <p class="text-2xl mb-10 leading-none">Важна и в городе и в лесу</p>
+                    </div>
+                </div>
+                <!-- container -->
+                <br>
+            </div>
+
+            <div id="slider-2" class="container mx-auto">
+                <div class="bg-cover bg-top  h-auto text-white py-24 px-10 object-fill" style="background-image: url(image/forest.PNG)">
+                    <p class="text-3xl font-bold">Безопасность</p>
+                    <p class="text-2xl mb-10 leading-none">Важна и в городе и в лесу</p>
+                </div>
+                <br>
+            </div>
+        </div>
+        <div class="flex justify-between w-12 mx-auto pb-2">
+            <button id="sButton1" onclick="sliderButton1()" class="bg-purple-400 rounded-full w-4 pb-2 "></button>
+            <button id="sButton2" onclick="sliderButton2() " class="bg-purple-400 rounded-full w-4 p-2"></button>
+        </div>
+
+        <section class="text-gray-600 body-font">
+            <div class="container px-5 py-24 mx-auto flex flex-wrap">
+                <div class="flex flex-wrap w-full">
+                    <div class="lg:w-1/5 md:w-1/3 md:pr-10 md:py-6">
+                        <div class="flex relative pb-12">
+                            <div class="flex-grow pl-4">
+                                <a href="#">
+                                    <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider hover:text-purple-800 ">
+                                        Общие положения</h2>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex relative pb-12">
+                            <div class="flex-grow pl-4">
+                                <a href="library_transport.html">
+                                    <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider hover:text-purple-800 ">На транспорте
+                                    </h2>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex relative pb-12">
+                            <div class="flex-grow pl-4">
+                                <a href="library_v_otrasli.html">
+                                    <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider hover:text-purple-800 ">В отрасли
+                                    </h2>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex relative pb-12">
+                            <div class="flex-grow pl-4">
+                                <a href="library_v_stroitelstve.html">
+                                    <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider hover:text-purple-800 ">В строительстве
+                                    </h2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12">
+                        <h1 class=" title-font text-medium text-gray-900 mb-1 text-2xl">Безопасность жизнидеятельности</h1>
+                        <p>Каждый человек, работающий на производственном предприятии, знает, что без прохождения инструктажа по охране и безопасности труда, к работе его не допустят. Для того чтобы обеспечить безопасность труда на производстве, предотвратить
+                            производственный травматизм и профзаболевания создается служба охраны труда. В каких случаях на предприятии создается такая служба, какие функции она выполняет и какие задачи решает, регулирует свод законов и положений об охране
+                            труда.
+                        </p>
+                        <br>
+                        <p>Вопросами предупреждения и устранения факторов, которые приводят к производственному травматизму и профзаболеваниям занимается государственный институт охраны труда.</p>
+                        <br>
+                        <p>Охрана труда это целая система. Она включает в себя не только охрану жизни и здоровья работников, это и правовые акты, и социально-экономические мероприятия, и санитарно-гигиенические и организационно-технические нормы. Также в
+                            систему охраны труда входят лечение, профилактика и реабилитация людей, пострадавших на производстве.</p>
+                        <br>
+                        <p>Государство гарантирует не только принятие, но и реализацию законов и правовых актов, регулирующих соблюдение охраны труда. Причем, на государстве лежит не только надзор за соблюдением трудового законодательства, но и обеспечение
+                            приоритета сохранения жизни и здоровья работников, экспертиза условий труда и профилактика несчастных случаев. Одновременно с этим, Закон обязывает работодателей создавать безопасные и безвредные условия труда. Владелец получает
+                            от органов государственного надзора разрешение на работу предприятия и, таким образом, берет на себя ответственность за жизнь и здоровье своих работников. Он обязан ознакомить своих сотрудников с требованиями нормативных актов
+                            об охране труда и следить за их неукоснительным выполнением.</p>
+                        <br>
+                        <video src="video/Безопасность жизнедеятельности. Вводная лекция-.mp4" class="w-screen" controls></video>
+                        <br>
+                        <section class="py-1 bg-blueGray-50">
+                            <div class="xl:w-12/12">
+                               <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-white ">
+                                 <div class="rounded-t mb-0 px-4 py-3 border-0">
+                                   <div class="flex flex-wrap items-center">
+                                     <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+                                       <h3 class="font-semibold text-base text-blueGray-700">
+                                         Самый безопасный транспорт по статистике 2021 города
+                                       </h3>
+                                     </div>
+                                   </div>
+                                 </div>
+                                 
+                                 <div class="block w-full overflow-x-auto">
+                                   <table class="items-center w-full border-collapse text-blueGray-700  ">
+                                     <thead class="thead-light ">
+                                       <tr>
+                                         <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                        Вид транспорта
+                                         </th>
+                                         <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                        Количество проголосовавших
+                                         </th>
+                                         <th class="px-6 bg-blueGray-50 text-blueGray-700 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px"></th>
+                                       </tr>
+                                     </thead>
+                                     <tbody>
+                                       <tr>
+                                         <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                                         Поезд
+                                         </th>
+                                         <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                           1,480
+                                         </td>
+                                         <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                           <div class="flex items-center">
+                                             <span class="mr-2">40%</span>
+                                             <div class="relative w-full">
+                                               <div class="overflow-hidden h-2 text-xs flex rounded bg-red-200">
+                                                 <div style="width: 40%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"></div>
+                                               </div>
+                                             </div>
+                                           </div>
+                                         </td>
+                                       </tr>
+                                       <tr>
+                                         <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                                           Самолет
+                                         </th>
+                                         <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                            740
+                                         </td>
+                                         <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                           <div class="flex items-center">
+                                             <span class="mr-2">20%</span>
+                                             <div class="relative w-full">
+                                               <div class="overflow-hidden h-2 text-xs flex rounded bg-purple-200">
+                                                 <div style="width: 20%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-500"></div>
+                                               </div>
+                                             </div>
+                                           </div>
+                                         </td>
+                                       </tr>
+                                       <tr>
+                                         <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                                           Автомобиль
+                                         </th>
+                                         <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                           74
+                                         </td>
+                                         <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                           <div class="flex items-center">
+                                             <span class="mr-2">2%</span>
+                                             <div class="relative w-full">
+                                               <div class="overflow-hidden h-2 text-xs flex rounded bg-purple-200">
+                                                 <div style="width: 2%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500"></div>
+                                               </div>
+                                             </div>
+                                           </div>
+                                         </td>
+                                       </tr>
+                                       <tr>
+                                         <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                                            Общественный транспорт
+                                         </th>
+                                         <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                           1090
+                                         </td>
+                                         <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                           <div class="flex items-center">
+                                             <span class="mr-2">25%</span>
+                                             <div class="relative w-full">
+                                               <div class="overflow-hidden h-2 text-xs flex rounded bg-pink-200">
+                                                 <div style="width: 25%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500"></div>
+                                               </div>
+                                             </div>
+                                           </div>
+                                         </td>
+                                       </tr>
+                                       <tr>
+                                         <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                                           Корабль
+                                         </th>
+                                         <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                           142
+                                         </td>
+                                         <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                           <div class="flex items-center">
+                                             <span class="mr-2">13%</span>
+                                             <div class="relative w-full">
+                                               <div class="overflow-hidden h-2 text-xs flex rounded bg-orange-200">
+                                                 <div style="width: 13%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"></div>
+                                               </div>
+                                             </div>
+                                           </div>
+                                         </td>
+                                       </tr>
+                                     </tbody>
+                                   </table>
+                                 </div>
+                               </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-gray-600 body-font">
+            <div class="container px-5 py-24 mx-auto flex items-center md:flex-row flex-col">
+                <div class="flex flex-col md:pr-10 md:mb-0 mb-6 pr-0 w-full md:w-auto md:text-left text-center">
+                    <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">ОБоже</h2>
+                    <h1 class="md:text-3xl text-2xl font-medium title-font text-gray-900">Вы можете скачать наш учебник</h1>
+                </div>
+                <div class="flex md:ml-auto md:mr-0 mx-auto items-center flex-shrink-0 space-x-4">
+                    <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 512 512">
+                    <path d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"></path>
+                  </svg>
+                  <span class="ml-4 flex items-start flex-col leading-none">
+                    <span class="text-xs text-gray-600 mb-1">GET IT ON</span>
+                    <span class="title-font font-medium">Google Play</span>
+                  </span>
+                </button>
+                    <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 305 305">
+                    <path d="M40.74 112.12c-25.79 44.74-9.4 112.65 19.12 153.82C74.09 286.52 88.5 305 108.24 305c.37 0 .74 0 1.13-.02 9.27-.37 15.97-3.23 22.45-5.99 7.27-3.1 14.8-6.3 26.6-6.3 11.22 0 18.39 3.1 25.31 6.1 6.83 2.95 13.87 6 24.26 5.81 22.23-.41 35.88-20.35 47.92-37.94a168.18 168.18 0 0021-43l.09-.28a2.5 2.5 0 00-1.33-3.06l-.18-.08c-3.92-1.6-38.26-16.84-38.62-58.36-.34-33.74 25.76-51.6 31-54.84l.24-.15a2.5 2.5 0 00.7-3.51c-18-26.37-45.62-30.34-56.73-30.82a50.04 50.04 0 00-4.95-.24c-13.06 0-25.56 4.93-35.61 8.9-6.94 2.73-12.93 5.09-17.06 5.09-4.64 0-10.67-2.4-17.65-5.16-9.33-3.7-19.9-7.9-31.1-7.9l-.79.01c-26.03.38-50.62 15.27-64.18 38.86z"></path>
+                    <path d="M212.1 0c-15.76.64-34.67 10.35-45.97 23.58-9.6 11.13-19 29.68-16.52 48.38a2.5 2.5 0 002.29 2.17c1.06.08 2.15.12 3.23.12 15.41 0 32.04-8.52 43.4-22.25 11.94-14.5 17.99-33.1 16.16-49.77A2.52 2.52 0 00212.1 0z"></path>
+                  </svg>
+                  <span class="ml-4 flex items-start flex-col leading-none">
+                    <span class="text-xs text-gray-600 mb-1">Download on the</span>
+                    <span class="title-font font-medium">App Store</span>
+                  </span>
+                </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-gray-600 body-font">
+            <div class="container px-5 py-24 mx-auto text-center">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Свежие статьи</h1>
+                <div class="flex flex-wrap -m-4">
+                    <div id="state" class="p-4 lg:w-1/3">
+                        <div class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+                            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">ОБоже</h2>
+                            <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Безопасность жизнитеятельности в отрасли
+                            </h1>
+                            <p class="leading-relaxed mb-3">Охрана труда в отрасли - это часть общегосударственной системы охраны труда, решающая вопросы...</p>
+                            <a class="text-indigo-500 inline-flex items-center" href="library_v_otrasli.html">Читать далее
+                                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14"></path>
+                                    <path d="M12 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                            <div class="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
+                                <span class="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                                    <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"stroke-linejoin="round" viewBox="0 0 24 24">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>800
+                                </span>
+                                <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                                    <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
+                                        </path>
+                                    </svg>0
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="state"  class="p-4 lg:w-1/3">
+                        <div class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+                            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">ОБоже</h2>
+                            <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Что вам угражает в транспорте?
+                            </h1>
+                            <p class="leading-relaxed mb-3">Движущееся на большой скорости скопление людей в транспорте и в замкнутом пространстве всегда означает ситуацию повы...</p>
+                            <a class="text-indigo-500 inline-flex items-center" href="library_transport.html">Читать далее
+                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+                            <div class="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
+                                <span class="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                  <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>1.2K
+                </span>
+                                <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                  <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path
+                      d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
+                    </path>
+                  </svg>2
+                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="state"  class="p-4 lg:w-1/3">
+                        <div class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
+                            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">ОБоже</h2>
+                            <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">Kак строительство может разрушить жизнь человека?</h1>
+                            <p class="leading-relaxed mb-3">Стройка - место, где работникам нужно постоянно быть начеку. На строительной площадке сосредоточено множество опас...</p>
+                            <a class="text-indigo-500 inline-flex items-center" href="library_v_stroitelstve.html">Читать далее
+                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+                            <div class="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
+                                <span class="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                  <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>3.2K
+                </span>
+                                <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                  <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path
+                      d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
+                    </path>
+                  </svg>6
+                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-gray-600 body-font">
+            <div class="container px-5 py-24 mx-auto">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Электронные пособия</h1>
+                <div class="flex flex-wrap -m-4">
+                    <div id="elposobie" class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                        <a class="block relative h-48 rounded overflow-hidden">
+                            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="image/firo.png">
+                        </a>
+                        <div class="mt-4">
+                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Федеральный институт развития образования "Учебно-исследовательская деятельность школьников"</h3>
+                            <h2 class="text-gray-900 title-font text-lg font-medium">Учебно-исследовательская деятельность школьников</h2>
+                            <p class="mt-1">$16.00</p>
+                        </div>
+                    </div>
+                    <div id="elposobie" class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                        <a class="block relative h-48 rounded overflow-hidden">
+                            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="image/firo0.png">
+                        </a>
+                        <div class="mt-4">
+                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Надежность технических систем и техногенный риск</h3>
+                            <h2 class="text-gray-900 title-font text-lg font-medium">Надежность технических систем и техногенный риск</h2>
+                            <p class="mt-1">$21.15</p>
+                        </div>
+                    </div>
+                    <div id="elposobie" class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                        <a class="block relative h-48 rounded overflow-hidden">
+                            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="image/firo1.png">
+                        </a>
+                        <div class="mt-4">
+                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Экономические механизмы управления рисками чрезвычайных ситуаций</h3>
+                            <h2 class="text-gray-900 title-font text-lg font-medium">Экономические механизмы управления рисками чрезвычайных ситуаций</h2>
+                            <p class="mt-1">$12.00</p>
+                        </div>
+                    </div>
+                    <div id="elposobie" class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                        <a class="block relative h-48 rounded overflow-hidden">
+                            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="image/firo2.jpg">
+                        </a>
+                        <div class="mt-4">
+                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Предупреждение и ликвидация чрезвычайных ситуаций</h3>
+                            <h2 class="text-gray-900 title-font text-lg font-medium">Предупреждение и ликвидация чрезвычайных ситуаций</h2>
+                            <p class="mt-1">$18.40</p>
+                        </div>
+                    </div>
+                    <div id="elposobie" class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                        <a class="block relative h-48 rounded overflow-hidden">
+                            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="image/firo3.png">
+                        </a>
+                        <div class="mt-4">
+                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Компьютерное учебно-методическое пособие для подготовки специалистов организаций города Москвы по навыкам поведения в чрезвычайных ситуациях и чрезвычайных ситуациях военного времени</h3>
+                            <h2 class="text-gray-900 title-font text-lg font-medium">Компьютерное учебно-методическое пособие</h2>
+                            <p class="mt-1">$16.00</p>
+                        </div>
+                    </div>
+                    <div id="elposobie" class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                        <a class="block relative h-48 rounded overflow-hidden">
+                            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="image/firo4.png">
+                        </a>
+                        <div class="mt-4">
+                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+                            <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
+                            <p class="mt-1">$21.15</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-gray-600 body-font">
+            <div class="container px-5 py-24 mx-auto">
+                <div class="flex flex-wrap w-full mb-20">
+                    <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+                        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Новости в сфере безопасности</h1>
+                        <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap -m-4">
+                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-gray-100 p-6 rounded-lg">
+                            <img class="h-40 rounded w-full object-cover object-center mb-6" src="image/obzh.jpg" alt="content">
+                            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">25.11.2021</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">О безопасности в кабинете ОБЖ. Климовичи</h2>
+                            <p class="leading-relaxed text-base">Климовичские спасатели регулярно проводят занятия по безопасности жизнедеятельности в кабинете ОБЖ. Ребята узнали, как правильно нужно пользоваться огнетушителем, электроприборами, газовым оборудованием и ознакомились функционалом
+                                мобильного приложения «МЧС Беларуси: Помощь рядом!».</p>
+                        </div>
+                    </div>
+                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-gray-100 p-6 rounded-lg">
+                            <img class="h-70 rounded w-full object-cover object-center mb-6" src="image/mchs.jpg" alt="content">
+                            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">Bчера в 17:12</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Елизавета Осовик — лучший пропагандист МЧС</h2>
+                            <p class="leading-relaxed text-base">Конечно, наш конкурс направлен на определение лучшего в направлении пропаганды безопасности жизнедеятельности. Но куда важнее то, что мы можем лично увидеть профессионалов своего дела... </p>
+                        </div>
+                    </div>
+                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-gray-100 p-6 rounded-lg">
+                            <img class="h-70 rounded w-full object-cover object-center mb-6" src="image/pdd.png" alt="content">
+                            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">31.11.21</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Учителя Вейделевской школы провели уроки по безопасности дорожного движения</h2>
+                            <p class="leading-relaxed text-base">Учащиеся старших классов приняли участие в акции «Мы за безопасное движение!» — уточнили сотрудники Вейделевской средней школы.. На уроках ОБЖ проведены тематические беседы «Основные причины ДТП с...</p>
+                        </div>
+                    </div>
+                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-gray-100 p-6 rounded-lg">
+                            <img class="h-70 rounded w-full object-cover object-center mb-6" src="image/nosmoke.jpg" alt="content">
+                            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">Вчера 18:35</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Дубровно. Курить – здоровью вредить</h2>
+                            <p class="leading-relaxed text-base">Но чтобы попробовать свои силы в этой нелегкой игре, старшеклассникам необходимо было вспомнить основные правила безопасности жизнедеятельности/
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-gray-600 body-font">
+            <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+                <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900" href="index.html">
+                    <img src="image/logo.PNG" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-0 rounded-full" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    <span class="ml-3 text-xl">ОБоже</span>
+                </a>
+                <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2021 ОБоже —
+                    <a href="#" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@anonymus</a>
+                </p>
+                <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+          <a class="ml-3 text-gray-500" href="https://instagram.com/sssssshaman?utm_medium=copy_link">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="w-5 h-5" viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            </svg>
+          </a>
+        </span>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

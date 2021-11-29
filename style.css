@@ -1,0 +1,193 @@
+
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    /* фоновый цвет */
+    background: #e0e0e0;
+    z-index: 1001;
+  }
+
+  .preloader__image {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+  }
+
+  @keyframes preloader-rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+  }
+
+  .loaded .preloader {
+    display: none;
+  }
+#elposobie {
+    transition: 1s;
+}
+#elposobie:hover {
+    transform: scale(1.2); /* Увеличиваем масштаб */
+   }
+#state {
+    transition: 1s;
+
+}
+#state:hover {
+    border-radius: 10px;
+    border: 10px solid #5B21B6;
+}
+.body {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+
+}
+.xz4e {
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+}
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.librery {
+    width: 25%;
+    border-right: 2px solid black;
+}
+
+.article {
+    width: 75%;
+}
+
+.test {
+    box-shadow: 1px 1px 10px rgb(224, 224, 224);
+    -moz-box-shadow: 1px 1px 10px rgb(224, 224, 224);
+    -webkit-box-shadow: 1px 1px 10px rgb(224, 224, 224);
+}
+
+.sign_in {
+    position: fixed;
+    padding: 0%;
+    margin: 10% 20%;
+}
+
+.state {
+    position: fixed;
+    width: 80%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-right: 10%;
+}
+
+#weather {
+    position: fixed;
+    bottom: 0;
+    right:0%;
+}
+
+@media screen and (max-width: 1700px) {
+    #weather {
+        display: none;
+    }
+    .xz4e {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .body {
+        width: 100%;
+    }
+    .sign_in {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .testimonial {
+        margin-bottom: 10px;
+    }
+}
+
+.scrollup {
+    position: fixed;
+    width: 150px;
+    /* фиксированная позиция */
+    color: black;
+    font-weight: bold;
+    /* цвет текста */
+    background-color: #C4B5FD;
+    /* цвет заднего фона */
+    right: 80px;
+    /* расстояние от правого края */
+    top: 0px;
+    padding: 10px;
+    border-bottom-left-radius: 4px;
+    /* скругление верхнего левого угла */
+    border-bottom-right-radius: 4px;
+    /* скругление верхнего правого угла */
+    cursor: pointer;
+    /* форма курсора */
+    display: none;
+    /* не отображать элемент */
+    text-align: center;
+    /*выравнивание содержимого элемента по центру */
+}
+
+.scrollup:hover {
+    background-color: #A78BFA;
+    /* цвет заднего фона при наведении */
+}
+::-webkit-scrollbar-button {
+    background-image:url('');
+    background-repeat:no-repeat;
+    width:5px;
+    height:0px
+    }
+    
+    ::-webkit-scrollbar-track {
+    background-color:#8B5CF6;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background-color:#A78BFA;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover{
+    background-color:#5B21B6 ;
+    }
+    
+    ::-webkit-resizer{
+    background-image:url('');
+    background-repeat:no-repeat;
+    width:4px;
+    height:0px
+    }
+    
+    ::-webkit-scrollbar{
+    width: 10px;
+    }
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);
